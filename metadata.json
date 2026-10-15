@@ -1,0 +1,6 @@
+{
+  "name": "Geometri Şehri Mimarı - TYMM 5. Sınıf Matematik",
+  "description": "Türkiye Yüzyılı Maarif Modeli 5. sınıf Temel Geometrik Çizimler ve İnşalar temasına uygun bağlam temelli, interaktif eğitici geometri oyunu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
