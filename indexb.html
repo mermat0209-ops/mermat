@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+  <script type="module" src="/mermat/@vite/client"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometri Şehri Mimarı - TYMM 5. Sınıf Matematik</title>
+  <meta name="description" content="Türkiye Yüzyılı Maarif Modeli 5. sınıf Temel Geometrik Çizimler ve İnşalar temasına uygun bağlam temelli, interaktif eğitici geometri oyunu.">
+  
+  <!-- Tailwind CSS CDN (Harici derleyici gerektirmez) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-heading { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.25; }
+      50% { transform: scale(1.15); opacity: 0.6; }
+    }
+    .pulse-ring { animation: pulseGlow 2s infinite ease-in-out; }
+
+    /* Özel Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    /* Yazdırma / Sertifika Çıktısı */
+    @media print {
+      body { background: white !important; color: black !important; }
+      header, nav, #app-tabs, footer, .no-print, #task-ribbon { display: none !important; }
+      #modal-diploma { position: static !important; display: block !important; background: transparent !important; }
+      #diploma-card { 
+        box-shadow: none !important; 
+        border: 8px solid #d97706 !important; 
+        background: white !important; 
+        color: black !important; 
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+    }
+  </style>
+<script src="/_aistudio-iframe.js?v=6634132a"></script><script src="https://cdn.jsdelivr.net/npm/html2canvas-pro@2.0.4"></script><style>.aistudio-hover-highlight { box-shadow: inset 0 0 0 0.5px white, inset 0 0 0 1.5px rgba(128,128,128,0.6) !important; }.aistudio-active-highlight { outline: 2px solid #87a9ff !important; outline-offset: -2px !important; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.3), inset 0 0 0 0.5px rgba(0,0,0,0.3) !important; }.aistudio-generating-blur { filter: blur(5px) grayscale(100%) brightness(28%) !important; transition: filter 0.3s ease; }#aistudio-focus-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: #87a9ff; border-radius: 12px; z-index: 10000; padding: 8px; color: #32302c; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }#aistudio-hover-mode-tag { position: absolute; display: none; align-items: center; gap: 4px; background: rgba(128,128,128,0.6); border-radius: 12px; z-index: 10000; padding: 8px; color: white; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 500; line-height: 21px; pointer-events: none; }.aistudio-img-icon { display: none; vertical-align: middle; pointer-events: auto; cursor: pointer; }.aistudio-img-icon.visible { display: inline-flex; }#aistudio-focus-mode-tag .aistudio-img-icon { position: relative; width: 26px; height: 26px; background: #32302c; border-radius: 6px; margin: -4px -4px -4px 0; }#aistudio-focus-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-hover-mode-tag .aistudio-img-icon { position: relative; width: 18px; height: 18px; margin-left: 4px; }#aistudio-hover-mode-tag .aistudio-img-icon::before { content: ""; position: absolute; top: 0; left: 0; width: 18px; height: 18px; background-color: white; -webkit-mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; mask-image: url("https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/edit_fix_auto/default/24px.svg"); mask-size: contain; mask-repeat: no-repeat; }#aistudio-focus-mode-tag .aistudio-img-icon:hover, #aistudio-hover-mode-tag .aistudio-img-icon:hover { background: #424242 !important; }#aistudio-focus-mode-tag .aistudio-img-icon:active, #aistudio-hover-mode-tag .aistudio-img-icon:active { background: #393f51 !important; }</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-3{margin-top:0.75rem;margin-bottom:0.75rem}.my-5{margin-top:1.25rem;margin-bottom:1.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/9\]{aspect-ratio:16/9}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-8{height:2rem}.h-full{height:100%}.max-h-\[420px\]{max-height:420px}.max-h-\[440px\]{max-height:440px}.max-h-\[450px\]{max-height:450px}.max-h-\[85vh\]{max-height:85vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-crosshair{cursor:crosshair}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-400\/20{border-color:rgb(251 191 36 / 0.2)}.border-amber-500{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.border-emerald-400\/20{border-color:rgb(52 211 153 / 0.2)}.border-emerald-500\/30{border-color:rgb(16 185 129 / 0.3)}.border-emerald-800\/40{border-color:rgb(6 95 70 / 0.4)}.border-rose-800\/50{border-color:rgb(159 18 57 / 0.5)}.border-sky-600{--tw-border-opacity:1;border-color:rgb(2 132 199 / var(--tw-border-opacity, 1))}.border-sky-700\/60{border-color:rgb(3 105 161 / 0.6)}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-700\/60{border-color:rgb(51 65 85 / 0.6)}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.bg-amber-400\/10{background-color:rgb(251 191 36 / 0.1)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-amber-500\/20{background-color:rgb(245 158 11 / 0.2)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-emerald-400\/10{background-color:rgb(52 211 153 / 0.1)}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-emerald-950\/30{background-color:rgb(2 44 34 / 0.3)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-purple-500\/20{background-color:rgb(168 85 247 / 0.2)}.bg-rose-950\/60{background-color:rgb(76 5 25 / 0.6)}.bg-sky-500\/20{background-color:rgb(14 165 233 / 0.2)}.bg-sky-950\/70{background-color:rgb(8 47 73 / 0.7)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/80{background-color:rgb(30 41 59 / 0.8)}.bg-slate-800\/90{background-color:rgb(30 41 59 / 0.9)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/60{background-color:rgb(15 23 42 / 0.6)}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/50{background-color:rgb(2 6 23 / 0.5)}.bg-slate-950\/85{background-color:rgb(2 6 23 / 0.85)}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgb(245 158 11 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-emerald-400{--tw-gradient-to:#34d399 var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-3{padding-bottom:0.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-emerald-200{--tw-text-opacity:1;color:rgb(167 243 208 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-sky-300{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-amber-500\/20{--tw-shadow-color:rgb(245 158 11 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-amber-500 *::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.selection\:text-slate-950 *::selection{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.selection\:bg-amber-500::selection{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.selection\:text-slate-950::selection{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.hover\:border-amber-500:hover{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.hover\:border-emerald-500:hover{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.hover\:border-purple-500:hover{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.hover\:border-sky-500:hover{--tw-border-opacity:1;border-color:rgb(14 165 233 / var(--tw-border-opacity, 1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-500:hover{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-900:hover{--tw-bg-opacity:1;background-color:rgb(136 19 55 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-900:hover{--tw-bg-opacity:1;background-color:rgb(12 74 110 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:text-amber-400:hover{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.hover\:text-sky-400:hover{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-amber-400:focus{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:inline{display:inline}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-6{padding:1.5rem}.md\:p-8{padding:2rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}</style></head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex flex-col selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- ==================== 1. ÜST BİLGİ & GEZİNME ÇUBUĞU ==================== -->
+  <header class="bg-slate-900/90 border-b border-slate-800 sticky top-0 z-40 px-4 py-3 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Marka & Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-emerald-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20 select-none">
+          🏛️
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-bold text-lg text-white font-heading tracking-tight">Geometri Şehri Mimarı</h1>
+            <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              TYMM 5. Sınıf
+            </span>
+          </div>
+          <p class="text-xs text-slate-400">Temel Geometrik Çizimler, İnşalar ve Açılar Atölyesi</p>
+        </div>
+      </div>
+
+      <!-- Bölüm Seçim Sekmeleri -->
+      <nav id="app-tabs" class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 overflow-x-auto text-xs max-w-full">
+        <button onclick="switchTab(1)" id="tab-btn-1" class="px-3 py-1.5 rounded-lg font-bold bg-amber-500 text-slate-950 shadow whitespace-nowrap transition-all">
+          1. Sokaklar &amp; Doğrular
+        </button>
+        <button onclick="switchTab(2)" id="tab-btn-2" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white whitespace-nowrap transition-all">
+          2. Açı Dedektifi
+        </button>
+        <button onclick="switchTab(3)" id="tab-btn-3" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white whitespace-nowrap transition-all">
+          3. Geometrik İnşa
+        </button>
+        <button onclick="switchTab(4)" id="tab-btn-4" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white whitespace-nowrap transition-all">
+          4. Mimar Stüdyosu
+        </button>
+      </nav>
+
+      <!-- Puan, Ses, İndirme ve Sertifika -->
+      <div class="flex items-center gap-2 text-xs">
+        <div class="bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 flex items-center gap-2 font-mono">
+          <span class="text-amber-400 font-bold" id="ui-stars">★ 0</span>
+          <span class="text-slate-500">|</span>
+          <span class="text-emerald-400 font-bold" id="ui-score">0 Puan</span>
+        </div>
+        
+        <button onclick="toggleAudio()" id="btn-audio" class="p-2 bg-slate-800 hover:bg-slate-700 text-emerald-400 rounded-xl border border-slate-700 transition" title="Sesi Aç/Kapat">
+          🔊
+        </button>
+        
+        <button onclick="openGuideModal()" class="px-2.5 py-1.5 bg-sky-950/70 hover:bg-sky-900 border border-sky-700/60 text-sky-300 font-semibold rounded-xl transition">
+          📖 Kılavuz
+        </button>
+
+        <button onclick="openDiploma()" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl shadow-md shadow-amber-500/20 transition">
+          🏆 Lisans
+        </button>
+
+        <button onclick="downloadSelfHtml()" class="px-2.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition shadow flex items-center gap-1" title="Bu Tek Dosyayı İndir">
+          💾 <span class="hidden md:inline">HTML İndir</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== GÖREV BİLGİ ŞERİDİ ==================== -->
+  <div id="task-ribbon" class="bg-slate-900/60 border-b border-slate-800 px-4 py-2 text-xs text-slate-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span id="sub-ribbon-text" class="text-slate-300">
+          1. Bölüm: Şehir Ulaşım Ağı - Paralel (d₁ // d₂) ve Dik Kesişen (d₁ ⊥ d₂) Yollar
+        </span>
+      </div>
+      <span class="hidden sm:inline text-amber-400 font-semibold">T.C. MEB Türkiye Yüzyılı Maarif Modeli</span>
+    </div>
+  </div>
+
+  <!-- ==================== ANA OYUN KONTEYNERİ ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
+
+    <!-- BÖLÜM 1: SOKAKLAR VE DOĞRULAR (ŞEHİR PLANI) -->
+    <section id="section-1" class="space-y-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+                Bölüm 1 / 3
+              </span>
+              <span class="text-xs text-slate-400">Şehir Ulaşım Planlaması</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-white font-heading" id="sec1-title">Görev 1: Yeşil Vadi Bisiklet Yolu (Paralel Doğru)</h2>
+          </div>
+          <div class="flex items-center gap-1.5" id="sec1-stepper">
+            <button onclick="loadRoadMission(0)" id="road-step-0" class="w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition">1</button>
+            <button onclick="loadRoadMission(1)" id="road-step-1" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">2</button>
+            <button onclick="loadRoadMission(2)" id="road-step-2" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">3</button>
+          </div>
+        </div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="md:col-span-2 text-slate-300 text-sm leading-relaxed bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+            <p class="font-medium text-slate-100 mb-1">
+              🎯 <strong class="text-amber-300">Görev Yönergesi:</strong>
+            </p>
+            <span id="sec1-desc">Mimar Sinan Bulvarı'na tam PARALEL (d₁ // d₂) yeni bisiklet yolu inşa et! K ve L noktalarını seçerek yolu bağla.</span>
+          </div>
+          <div class="text-xs bg-emerald-950/30 p-4 rounded-xl border border-emerald-800/40 text-emerald-200">
+            <div class="font-bold mb-1 text-emerald-400">ℹ️ TYMM Geometri Notu</div>
+            <p id="sec1-note">Paralel doğruların arasındaki dik uzaklık her noktada aynıdır ve bu doğrular asla kesişmez (d₁ // d₂).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 md:p-6 relative shadow-2xl">
+        <div class="w-full aspect-[16/9] max-h-[440px] bg-slate-950 rounded-2xl border border-slate-800 relative overflow-hidden flex items-center justify-center">
+          <svg id="sec1-canvas" viewBox="0 0 600 400" class="w-full h-full select-none">
+        <!-- Grid çizgileri -->
+        <line x1="0" y1="0" x2="0" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="40" y1="0" x2="40" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="80" y1="0" x2="80" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="120" y1="0" x2="120" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="160" y1="0" x2="160" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="200" y1="0" x2="200" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="240" y1="0" x2="240" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="280" y1="0" x2="280" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="320" y1="0" x2="320" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="360" y1="0" x2="360" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="400" y1="0" x2="400" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="440" y1="0" x2="440" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="480" y1="0" x2="480" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="520" y1="0" x2="520" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="560" y1="0" x2="560" y2="400" stroke="#1e293b" stroke-width="1"></line>
+        <line x1="0" y1="0" x2="600" y2="0" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="40" x2="600" y2="40" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="80" x2="600" y2="80" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="120" x2="600" y2="120" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="160" x2="600" y2="160" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="200" x2="600" y2="200" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="240" x2="600" y2="240" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="280" x2="600" y2="280" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="320" x2="600" y2="320" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="360" x2="600" y2="360" stroke="#1e293b" stroke-width="1"></line>
+
+        <!-- Ana Cadde -->
+        <line x1="60" y1="140" x2="540" y2="140" stroke="#334155" stroke-width="28" stroke-linecap="round"></line>
+        <line x1="60" y1="140" x2="540" y2="140" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10,8"></line>
+        <rect x="220" y="108" width="160" height="20" rx="5" fill="#0f172a" stroke="#f43f5e" stroke-width="1"></rect>
+        <text x="300" y="122" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="bold">🛣️ Mimar Sinan Bulvarı</text>
+
+        <!-- Çizilen Yol Katmanı -->
+        <g id="sec1-drawn-road"></g>
+
+        <!-- Hedef Noktalar -->
+        
+          <g onclick="selectRoadPoint(0)" class="cursor-pointer group">
+            <circle cx="60" cy="260" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"></circle>
+            <circle cx="60" cy="260" r="6" fill="#38bdf8" id="p-dot-0"></circle>
+            <rect x="50" y="232" width="20" height="18" rx="4" fill="#0f172a" stroke="#475569"></rect>
+            <text x="60" y="245" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">K</text>
+          </g>
+        
+          <g onclick="selectRoadPoint(1)" class="cursor-pointer group">
+            <circle cx="540" cy="260" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"></circle>
+            <circle cx="540" cy="260" r="6" fill="#38bdf8" id="p-dot-1"></circle>
+            <rect x="530" y="232" width="20" height="18" rx="4" fill="#0f172a" stroke="#475569"></rect>
+            <text x="540" y="245" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">L</text>
+          </g>
+        
+          <g onclick="selectRoadPoint(2)" class="cursor-pointer group">
+            <circle cx="200" cy="340" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"></circle>
+            <circle cx="200" cy="340" r="6" fill="#38bdf8" id="p-dot-2"></circle>
+            <rect x="190" y="312" width="20" height="18" rx="4" fill="#0f172a" stroke="#475569"></rect>
+            <text x="200" y="325" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">M</text>
+          </g>
+        
+          <g onclick="selectRoadPoint(3)" class="cursor-pointer group">
+            <circle cx="400" cy="200" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"></circle>
+            <circle cx="400" cy="200" r="6" fill="#38bdf8" id="p-dot-3"></circle>
+            <rect x="390" y="172" width="20" height="18" rx="4" fill="#0f172a" stroke="#475569"></rect>
+            <text x="400" y="185" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">N</text>
+          </g>
+        
+      </svg>
+        </div>
+        <div id="sec1-feedback" class="hidden"></div>
+      </div>
+    </section>
+
+    <!-- BÖLÜM 2: AÇI DEDEKTİFİ (MİMARİ YAPILAR VE İLETKİ) -->
+    <section id="section-2" class="hidden space-y-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+                Bölüm 2 / 3
+              </span>
+              <span class="text-xs text-slate-400">Mimari Açı Dedektifi</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-white font-heading" id="sec2-title">1. Bilim Müzesi Güneş Çatısı</h2>
+          </div>
+          <div class="flex items-center gap-1.5" id="sec2-stepper">
+            <button onclick="loadAngleMission(0)" id="ang-step-0" class="w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition">1</button>
+            <button onclick="loadAngleMission(1)" id="ang-step-1" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">2</button>
+            <button onclick="loadAngleMission(2)" id="ang-step-2" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">3</button>
+            <button onclick="loadAngleMission(3)" id="ang-step-3" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">4</button>
+          </div>
+        </div>
+        <div class="mt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+          <div class="text-sm text-slate-300">
+            <p class="font-semibold text-white mb-1" id="sec2-building">🏢 Ekolojik Bilim Müzesi</p>
+            <p id="sec2-desc">Güneş panellerinin eğim açısı 42° dir. Bu açının türü nedir?</p>
+          </div>
+          <button onclick="toggleProtractor()" id="btn-protractor-toggle" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-950/70 border border-sky-600 text-sky-300 flex items-center gap-1.5 transition">
+            📐 İletkiyi Aç/Kapat
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 md:p-6 relative shadow-2xl">
+        <div class="w-full aspect-[16/9] max-h-[420px] bg-slate-950 rounded-2xl border border-slate-800 relative overflow-hidden flex items-center justify-center">
+          <svg id="sec2-canvas" viewBox="0 0 600 380" class="w-full h-full select-none">
+        <!-- İletki / Açıölçer Plakası -->
+        <g id="sec2-protractor-group" style="display: block">
+          <path d="M 180 240 A 120 120 0 0 1 420 240 Z" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2"></path>
+          <line x1="180" y1="240" x2="420" y2="240" stroke="#38bdf8" stroke-width="2"></line>
+          <text x="300" y="260" text-anchor="middle" fill="#7dd3fc" font-size="11">İletki Merkezi (Köşe Noktası)</text>
+          <text x="395" y="244" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">0°</text><text x="382.2724133595217" y="196.5" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">30°</text><text x="367.175144212722" y="176.824855787278" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">45°</text><text x="347.5" y="161.72758664047834" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">60°</text><text x="300" y="149" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">90°</text><text x="252.50000000000003" y="161.7275866404783" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">120°</text><text x="232.824855787278" y="176.82485578727798" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">135°</text><text x="217.7275866404783" y="196.5" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">150°</text><text x="205" y="244" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">180°</text>
+        </g>
+
+        <!-- Açı Kolları (Işınlar) -->
+        <line x1="300" y1="240" x2="480" y2="240" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"></line>
+        <line x1="300" y1="240" x2="418.90317207638304" y2="132.93910298258268" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"></line>
+        <circle cx="300" cy="240" r="7" fill="#f43f5e"></circle>
+
+        <!-- Açı Yay ve Değer Gösterimi -->
+        
+          <path d="M 345 240 A 45 45 0 0 0 333.44151714648274 209.88912271385138" fill="none" stroke="#ec4899" stroke-width="3"></path>
+          <text x="355" y="220" fill="#f472b6" font-size="16" font-weight="bold">42°</text>
+        
+      </svg>
+        </div>
+
+        <!-- Açı Seçenek Kartları (4 Adet) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+          <button onclick="checkAngle('dar')" class="p-3 bg-slate-800/90 hover:bg-slate-750 border border-slate-700 rounded-xl text-left transition hover:border-sky-500">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-white text-sm">Dar Açı</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono">&lt; 90°</span>
+            </div>
+            <div class="text-[11px] text-slate-400">0° ile 90° arası sivri açılar</div>
+          </button>
+          <button onclick="checkAngle('dik')" class="p-3 bg-slate-800/90 hover:bg-slate-750 border border-slate-700 rounded-xl text-left transition hover:border-emerald-500">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-white text-sm">Dik Açı</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">= 90°</span>
+            </div>
+            <div class="text-[11px] text-slate-400">Tam 90° (L köşesi)</div>
+          </button>
+          <button onclick="checkAngle('genis')" class="p-3 bg-slate-800/90 hover:bg-slate-750 border border-slate-700 rounded-xl text-left transition hover:border-amber-500">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-white text-sm">Geniş Açı</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">90°-180°</span>
+            </div>
+            <div class="text-[11px] text-slate-400">90° ile 180° arası açık kollar</div>
+          </button>
+          <button onclick="checkAngle('dogru')" class="p-3 bg-slate-800/90 hover:bg-slate-750 border border-slate-700 rounded-xl text-left transition hover:border-purple-500">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-white text-sm">Doğru Açı</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">= 180°</span>
+            </div>
+            <div class="text-[11px] text-slate-400">Tam 180° (Dümdüz doğru)</div>
+          </button>
+        </div>
+
+        <div id="sec2-feedback" class="hidden"></div>
+      </div>
+    </section>
+
+    <!-- BÖLÜM 3: GEOMETRİK İNŞA (NOKTA, DOĞRU, IŞIN, PARÇA) -->
+    <section id="section-3" class="hidden space-y-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+                Bölüm 3 / 3
+              </span>
+              <span class="text-xs text-slate-400">Geometrik İnşa ve Park Tasarımı</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-white font-heading" id="sec3-title">1. Park Ana Bulvarı (Doğru Çizimi)</h2>
+          </div>
+          <div class="flex items-center gap-1.5" id="sec3-stepper">
+            <button onclick="loadConstMission(0)" id="const-step-0" class="w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition">1</button>
+            <button onclick="loadConstMission(1)" id="const-step-1" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">2</button>
+            <button onclick="loadConstMission(2)" id="const-step-2" class="w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition">3</button>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 mt-3" id="sec3-desc">A ve B noktalarını bağlayarak iki yöne sonsuz uzanan ⟷AB doğrusunu çiz.</p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 md:p-6 relative shadow-2xl">
+        <!-- Araç Paleti -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3 text-xs">
+          <div class="flex items-center gap-2 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 px-1 font-semibold">Çizim Aracı:</span>
+            <button onclick="setConstTool('line')" id="tool-line" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition">⟷ Doğru</button>
+            <button onclick="setConstTool('ray')" id="tool-ray" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition">[•→ Işın</button>
+            <button onclick="setConstTool('segment')" id="tool-segment" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition">[••] Doğru Parçası</button>
+          </div>
+          <button onclick="resetConst()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition flex items-center gap-1">
+            🔄 Sıfırla
+          </button>
+        </div>
+
+        <div class="w-full aspect-[16/9] max-h-[440px] bg-slate-950 rounded-2xl border border-slate-800 relative overflow-hidden flex items-center justify-center cursor-crosshair">
+          <svg id="sec3-canvas" viewBox="0 0 600 400" class="w-full h-full select-none" onclick="handleCanvas3Click(event)" onmousemove="handleCanvas3Move(event)">
+        <defs>
+          <marker id="carr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"></path>
+          </marker>
+        </defs>
+        <!-- Grid -->
+        <line x1="0" y1="0" x2="0" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="40" y1="0" x2="40" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="80" y1="0" x2="80" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="120" y1="0" x2="120" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="160" y1="0" x2="160" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="200" y1="0" x2="200" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="240" y1="0" x2="240" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="280" y1="0" x2="280" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="320" y1="0" x2="320" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="360" y1="0" x2="360" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="400" y1="0" x2="400" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="440" y1="0" x2="440" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="480" y1="0" x2="480" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="520" y1="0" x2="520" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="560" y1="0" x2="560" y2="400" stroke="#1e293b" stroke-width="1"></line>
+        <line x1="0" y1="0" x2="600" y2="0" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="40" x2="600" y2="40" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="80" x2="600" y2="80" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="120" x2="600" y2="120" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="160" x2="600" y2="160" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="200" x2="600" y2="200" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="240" x2="600" y2="240" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="280" x2="600" y2="280" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="320" x2="600" y2="320" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="360" x2="600" y2="360" stroke="#1e293b" stroke-width="1"></line>
+
+        <!-- Hedef Noktalar -->
+        <g>
+          <circle cx="160" cy="200" r="10" fill="#f43f5e" fill-opacity="0.2" stroke="#f43f5e" stroke-width="2"></circle>
+          <circle cx="160" cy="200" r="5" fill="#f43f5e"></circle>
+          <text x="160" y="180" text-anchor="middle" fill="#fda4af" font-size="12" font-weight="bold">A</text>
+
+          <circle cx="400" cy="200" r="10" fill="#0ea5e9" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="2"></circle>
+          <circle cx="400" cy="200" r="5" fill="#0ea5e9"></circle>
+          <text x="400" y="180" text-anchor="middle" fill="#7dd3fc" font-size="12" font-weight="bold">B</text>
+        </g>
+
+        <!-- Çizim Katmanı -->
+        <g id="const-drawing-layer"></g>
+      </svg>
+        </div>
+
+        <div id="sec3-feedback" class="hidden"></div>
+      </div>
+    </section>
+
+    <!-- BÖLÜM 4: SERBEST MİMAR STÜDYOSU (GEOMETRİ TAHTASI & PARKI) -->
+    <section id="section-4" class="hidden space-y-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2.5 py-0.5 rounded-full border border-emerald-400/20">
+                Serbest Çizim &amp; Analiz
+              </span>
+              <span class="text-xs text-slate-400">Geometri Tahtası &amp; Park İnşası</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-white font-heading">Mimar Geometri Laboratuvarı</h2>
+          </div>
+          <button onclick="clearSandbox()" class="px-3 py-1.5 bg-rose-950/60 hover:bg-rose-900 text-rose-300 border border-rose-800/50 rounded-xl text-xs font-bold transition">
+            🗑️ Tahtayı Temizle
+          </button>
+        </div>
+        <p class="text-sm text-slate-300 mt-2">
+          İstediğin doğru, ışın ve parçaları çiz! Canlı TYMM Geometri Motoru, çizimler arasındaki paralellik (//), diklik (⊥) ve açı ilişkilerini alttaki analiz kutusunda otomatik hesaplayacaktır.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 md:p-6 shadow-2xl space-y-4">
+        <!-- Araç Butonları -->
+        <div class="flex flex-wrap items-center gap-2 text-xs bg-slate-950 p-2 rounded-2xl border border-slate-800">
+          <span class="text-slate-400 font-semibold px-1">Geometri Araçları:</span>
+          <button onclick="setSandboxTool('line')" id="sb-tool-line" class="px-3 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold transition">⟷ Doğru</button>
+          <button onclick="setSandboxTool('ray')" id="sb-tool-ray" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 transition">[•→ Işın</button>
+          <button onclick="setSandboxTool('segment')" id="sb-tool-segment" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 transition">[••] Parça</button>
+          <span class="text-slate-700 font-mono">|</span>
+          <span class="text-slate-400 font-semibold px-1">Park Objeleri:</span>
+          <button onclick="setSandboxTool('tree')" id="sb-tool-tree" class="px-3 py-1.5 rounded-xl bg-slate-800 text-emerald-400 transition">🌲 Ağaç</button>
+          <button onclick="setSandboxTool('lamp')" id="sb-tool-lamp" class="px-3 py-1.5 rounded-xl bg-slate-800 text-amber-300 transition">💡 Lamba</button>
+          <button onclick="setSandboxTool('bench')" id="sb-tool-bench" class="px-3 py-1.5 rounded-xl bg-slate-800 text-indigo-300 transition">🪑 Bank</button>
+        </div>
+
+        <div class="w-full aspect-[16/9] max-h-[450px] bg-slate-950 rounded-2xl border border-slate-800 relative overflow-hidden flex items-center justify-center cursor-crosshair">
+          <svg id="sec4-canvas" viewBox="0 0 600 400" class="w-full h-full select-none" onclick="handleCanvas4Click(event)">
+        <defs>
+          <marker id="sbarr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"></path>
+          </marker>
+        </defs>
+        <line x1="0" y1="0" x2="0" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="40" y1="0" x2="40" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="80" y1="0" x2="80" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="120" y1="0" x2="120" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="160" y1="0" x2="160" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="200" y1="0" x2="200" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="240" y1="0" x2="240" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="280" y1="0" x2="280" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="320" y1="0" x2="320" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="360" y1="0" x2="360" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="400" y1="0" x2="400" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="440" y1="0" x2="440" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="480" y1="0" x2="480" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="520" y1="0" x2="520" y2="400" stroke="#1e293b" stroke-width="1"></line><line x1="560" y1="0" x2="560" y2="400" stroke="#1e293b" stroke-width="1"></line>
+        <line x1="0" y1="0" x2="600" y2="0" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="40" x2="600" y2="40" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="80" x2="600" y2="80" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="120" x2="600" y2="120" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="160" x2="600" y2="160" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="200" x2="600" y2="200" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="240" x2="600" y2="240" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="280" x2="600" y2="280" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="320" x2="600" y2="320" stroke="#1e293b" stroke-width="1"></line><line x1="0" y1="360" x2="600" y2="360" stroke="#1e293b" stroke-width="1"></line>
+
+        
+      </svg>
+        </div>
+
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span>📐 Canlı TYMM Matematik Analiz Raporu:</span>
+          </div>
+          <div id="sb-analysis" class="text-xs text-slate-300 space-y-1">
+            Çizim alanına tıklayarak noktaları birleştirin; paralel, dik ve açı ilişkileri burada anlık hesaplanacaktır.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== DİPLOMA / LİSANS MODALI ==================== -->
+  <div id="modal-diploma" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm">
+    <div id="diploma-card" class="bg-slate-900 border-4 border-amber-500 rounded-3xl p-6 md:p-8 max-w-xl w-full text-center relative shadow-2xl">
+      <button onclick="closeDiploma()" class="no-print absolute top-4 right-4 text-slate-400 hover:text-white text-lg">✕</button>
+      
+      <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-tr from-amber-500 to-emerald-400 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+        🏛️
+      </div>
+      
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">T.C. MEB Türkiye Yüzyılı Maarif Modeli</span>
+      <h2 class="text-2xl md:text-3xl font-black text-white mt-1 font-heading">GEOMETRİ BAŞ MİMARI LİSANSI</h2>
+      
+      <!-- Düzenlenebilir İsim -->
+      <div class="my-3">
+        <label class="text-[11px] text-slate-400 uppercase tracking-wider block mb-1">Mimar Öğrenci Adı Soyadı:</label>
+        <input type="text" id="diploma-name-input" value="Genç Şehir Mimarı" class="text-center font-bold text-xl text-amber-400 bg-slate-950 border border-slate-700 rounded-xl px-4 py-1.5 focus:border-amber-400 outline-none w-full max-w-xs mx-auto">
+      </div>
+
+      <p class="text-xs text-slate-300 mt-2 max-w-md mx-auto leading-relaxed">
+        5. sınıf "Temel Geometrik Çizimler ve İnşalar" temasındaki nokta, doğru, ışın, doğru parçası ve açı görevlerini üstün başarıyla tamamladığınız tescil edilmiştir.
+      </p>
+
+      <div class="my-5 p-4 bg-slate-950 rounded-2xl border border-slate-800 grid grid-cols-2 gap-4">
+        <div>
+          <div class="text-2xl font-bold text-emerald-400 font-mono" id="diploma-score">0</div>
+          <div class="text-xs text-slate-400">Kazanılan Puan</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-amber-400 font-mono" id="diploma-stars">★ 0</div>
+          <div class="text-xs text-slate-400">Yıldız Başarısı</div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-slate-800 text-xs text-slate-400">
+        <div class="text-left">
+          <p class="font-bold text-white">Geometri Şehri Konseyi</p>
+          <p class="text-[10px]">T.C. Millî Eğitim Bakanlığı Standartları</p>
+        </div>
+        <div class="text-right">
+          <p class="font-bold text-white">Lisans Türü</p>
+          <p class="text-[10px]">5. Sınıf Baş Mimarlık Diploması</p>
+        </div>
+      </div>
+
+      <button onclick="window.print()" class="no-print w-full mt-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition">
+        🖨️ Lisansı Yazdır / PDF Olarak Kaydet
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== KILAVUZ MODALI ==================== -->
+  <div id="modal-guide" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-2xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl space-y-4">
+      <button onclick="closeGuideModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">✕</button>
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">📖</span>
+        <h3 class="text-xl font-bold text-white font-heading">TYMM 5. Sınıf Geometri Kılavuzu</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-amber-400 text-sm mb-1">Nokta</div>
+          <p class="text-slate-300">Boyutu yoktur, büyük harfle gösterilir (A noktası). Düzlemde kesin bir konumu belirtir.</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-sky-400 text-sm mb-1">Doğru (⟷AB)</div>
+          <p class="text-slate-300">İki yöne sonsuza uzanır. İki farklı noktadan sadece tek bir doğru geçer!</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-emerald-400 text-sm mb-1">Işın ([AB)</div>
+          <p class="text-slate-300">Başlangıç noktası sabittir (A), diğer yönde ise sonsuza uzanır (Güneş ışını, fener ışığı).</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-purple-400 text-sm mb-1">Doğru Parçası ([AB])</div>
+          <p class="text-slate-300">İki ucu da sınırlıdır. Uzunluğu cetvelle ölçülebilir (|AB| = 6 cm).</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-yellow-400 text-sm mb-1">Paralel Doğrular (d₁ // d₂)</div>
+          <p class="text-slate-300">Aralarındaki uzaklık daima eşittir ve asla kesişmezler (Tren rayları, çift şerit).</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <div class="font-bold text-rose-400 text-sm mb-1">Dik Doğrular (d₁ ⊥ d₂)</div>
+          <p class="text-slate-300">Aralarındaki kesişme açısı tam 90 derecedir (Pencere çıtaları ve T-kavşak).</p>
+        </div>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 md:col-span-2">
+          <div class="font-bold text-cyan-400 text-sm mb-1">Açılar ve Çeşitleri</div>
+          <p class="text-slate-300">
+            <strong>Dar Açı:</strong> 0° ile 90° arası • 
+            <strong>Dik Açı:</strong> Tam 90° • 
+            <strong>Geniş Açı:</strong> 90° ile 180° arası • 
+            <strong>Doğru Açı:</strong> Tam 180°
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ALT BİLGİ (FOOTER) ==================== -->
+  <footer class="bg-slate-900/90 border-t border-slate-800 py-3 px-4 text-xs text-slate-400 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+        <p>M.5.2.1. Temel Geometrik Çizimler ve İnşalar • TYMM 5. Sınıf Müfredatı</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="openGuideModal()" class="hover:text-amber-400 transition">Kavram Kılavuzu</button>
+        <button onclick="downloadSelfHtml()" class="hover:text-sky-400 text-sky-400 font-bold transition">index.html Olarak İndir</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT OYUN & GEOMETRİ MOTORU ==================== -->
+  <script>
+    // 1. Web Audio API Sentezleyicisi (Harici MP3 / WAV dosyasına ihtiyaç duymaz)
+    let audioCtx = null;
+    let audioEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('btn-audio').textContent = audioEnabled ? '🔊' : '🔇';
+    }
+
+    function playTone(freq, dur = 0.12, type = 'sine') {
+      if (!audioEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function playSuccess() {
+      playTone(523.25, 0.09);
+      setTimeout(() => playTone(659.25, 0.09), 90);
+      setTimeout(() => playTone(783.99, 0.2), 180);
+    }
+
+    function playWrong() {
+      playTone(180, 0.25, 'sawtooth');
+    }
+
+    // 2. Global Durum (Skor, Yıldız)
+    let score = 0;
+    let stars = 0;
+
+    function addScore(pts) {
+      score += pts;
+      stars += 1;
+      document.getElementById('ui-score').textContent = score + ' Puan';
+      document.getElementById('ui-stars').textContent = '★ ' + stars;
+      document.getElementById('diploma-score').textContent = score;
+      document.getElementById('diploma-stars').textContent = '★ ' + stars;
+    }
+
+    // 3. Sekme Değişimi
+    function switchTab(tabNum) {
+      playTone(450, 0.04);
+      [1, 2, 3, 4].forEach(i => {
+        document.getElementById('section-' + i).classList.toggle('hidden', i !== tabNum);
+        const btn = document.getElementById('tab-btn-' + i);
+        if (i === tabNum) {
+          btn.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-500 text-slate-950 shadow whitespace-nowrap transition-all';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg text-slate-300 hover:text-white whitespace-nowrap transition-all';
+        }
+      });
+
+      const ribbons = {
+        1: '1. Bölüm: Şehir Ulaşım Ağı - Paralel (d₁ // d₂) ve Dik Kesişen (d₁ ⊥ d₂) Yollar',
+        2: '2. Bölüm: Mimari Açı Dedektifi - Dar, Dik, Geniş ve Doğru Açılar',
+        3: '3. Bölüm: Geometrik İnşa - ⟷ Doğru, [•→ Işın ve [••] Doğru Parçası',
+        4: '4. Bölüm: Serbest Geometri Stüdyosu - Serbest Çizim ve Canlı TYMM Analizcisi'
+      };
+      document.getElementById('sub-ribbon-text').textContent = ribbons[tabNum];
+    }
+
+    function openDiploma() {
+      playTone(600, 0.1);
+      document.getElementById('modal-diploma').classList.remove('hidden');
+    }
+    function closeDiploma() {
+      document.getElementById('modal-diploma').classList.add('hidden');
+    }
+
+    function openGuideModal() {
+      playTone(500, 0.05);
+      document.getElementById('modal-guide').classList.remove('hidden');
+    }
+    function closeGuideModal() {
+      document.getElementById('modal-guide').classList.add('hidden');
+    }
+
+    // Tek Dosya HTML İndirme Fonksiyonu
+    function downloadSelfHtml() {
+      playSuccess();
+      const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'index.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // ==================== BÖLÜM 1 MOTORU: SOKAKLAR VE DOĞRULAR ====================
+    const roadMissions = [
+      {
+        title: "Görev 1: Yeşil Vadi Bisiklet Yolu (Paralel Doğru)",
+        desc: "Mimar Sinan Bulvarı'na tam PARALEL (d₁ // d₂) yeni bisiklet yolu inşa et! K ve L noktalarını seçerek yolu bağla.",
+        note: "Paralel doğruların arasındaki dik uzaklık her noktada aynıdır ve bu doğrular asla kesişmez (d₁ // d₂).",
+        base: { x1: 60, y1: 140, x2: 540, y2: 140, name: "Mimar Sinan Bulvarı" },
+        points: [{x:60, y:260, l:'K'}, {x:540, y:260, l:'L'}, {x:200, y:340, l:'M'}, {x:400, y:200, l:'N'}],
+        correct: [0, 1]
+      },
+      {
+        title: "Görev 2: Şehir Hastanesi Acil Servis Yolu (Dik Kesişen Doğru)",
+        desc: "Cumhuriyet Caddesi'ni tam 90° DİK kesen (d₁ ⊥ d₂) acil ambulans yolunu inşa et! A ve B noktalarını bağla.",
+        note: "İki doğru kesiştiğinde aralarındaki açı tam 90° (dik açı) oluyorsa bu doğrulara dik kesişen doğrular denir (⊥).",
+        base: { x1: 80, y1: 220, x2: 520, y2: 220, name: "Cumhuriyet Caddesi" },
+        points: [{x:300, y:60, l:'A'}, {x:300, y:360, l:'B'}, {x:140, y:100, l:'C'}, {x:440, y:340, l:'D'}],
+        correct: [0, 1]
+      },
+      {
+        title: "Görev 3: Meydan Çapraz Geçidi (Kesişen Doğru)",
+        desc: "Park Bulvarı ile tek bir ortak noktada eğik kesişen yürüyüş yolunu oluştur! E ve F noktalarını birleştir.",
+        note: "Aynı düzlemde tek bir ortak noktası bulunan doğrulara kesişen doğrular denir.",
+        base: { x1: 70, y1: 200, x2: 530, y2: 200, name: "Park Bulvarı" },
+        points: [{x:120, y:80, l:'E'}, {x:480, y:320, l:'F'}, {x:80, y:320, l:'G'}, {x:520, y:320, l:'H'}],
+        correct: [0, 1]
+      }
+    ];
+
+    let currentRoadIdx = 0;
+    let selectedRoadPoints = [];
+
+    function loadRoadMission(idx) {
+      currentRoadIdx = idx;
+      selectedRoadPoints = [];
+      const m = roadMissions[idx];
+      document.getElementById('sec1-title').textContent = m.title;
+      document.getElementById('sec1-desc').textContent = m.desc;
+      document.getElementById('sec1-note').textContent = m.note;
+      document.getElementById('sec1-feedback').className = 'hidden';
+
+      [0, 1, 2].forEach(i => {
+        const b = document.getElementById('road-step-' + i);
+        b.className = i === idx 
+          ? 'w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition' 
+          : 'w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition';
+      });
+
+      const svg = document.getElementById('sec1-canvas');
+      svg.innerHTML = `
+        <!-- Grid çizgileri -->
+        ${Array.from({length: 15}).map((_, i) => `<line x1="${i*40}" y1="0" x2="${i*40}" y2="400" stroke="#1e293b" stroke-width="1"/>`).join('')}
+        ${Array.from({length: 10}).map((_, i) => `<line x1="0" y1="${i*40}" x2="600" y2="${i*40}" stroke="#1e293b" stroke-width="1"/>`).join('')}
+
+        <!-- Ana Cadde -->
+        <line x1="${m.base.x1}" y1="${m.base.y1}" x2="${m.base.x2}" y2="${m.base.y2}" stroke="#334155" stroke-width="28" stroke-linecap="round"/>
+        <line x1="${m.base.x1}" y1="${m.base.y1}" x2="${m.base.x2}" y2="${m.base.y2}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10,8"/>
+        <rect x="220" y="${m.base.y1 - 32}" width="160" height="20" rx="5" fill="#0f172a" stroke="#f43f5e" stroke-width="1"/>
+        <text x="300" y="${m.base.y1 - 18}" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="bold">🛣️ ${m.base.name}</text>
+
+        <!-- Çizilen Yol Katmanı -->
+        <g id="sec1-drawn-road"></g>
+
+        <!-- Hedef Noktalar -->
+        ${m.points.map((p, pIdx) => `
+          <g onclick="selectRoadPoint(${pIdx})" class="cursor-pointer group">
+            <circle cx="${p.x}" cy="${p.y}" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"/>
+            <circle cx="${p.x}" cy="${p.y}" r="6" fill="#38bdf8" id="p-dot-${pIdx}"/>
+            <rect x="${p.x-10}" y="${p.y-28}" width="20" height="18" rx="4" fill="#0f172a" stroke="#475569"/>
+            <text x="${p.x}" y="${p.y-15}" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">${p.l}</text>
+          </g>
+        `).join('')}
+      `;
+    }
+
+    function selectRoadPoint(pIdx) {
+      playTone(500, 0.05);
+      if (selectedRoadPoints.includes(pIdx)) return;
+      selectedRoadPoints.push(pIdx);
+
+      const dot = document.getElementById('p-dot-' + pIdx);
+      if (dot) dot.setAttribute('fill', '#f59e0b');
+
+      if (selectedRoadPoints.length === 2) {
+        checkRoadSolution();
+      }
+    }
+
+    function checkRoadSolution() {
+      const m = roadMissions[currentRoadIdx];
+      const p1 = m.points[selectedRoadPoints[0]];
+      const p2 = m.points[selectedRoadPoints[1]];
+
+      const isCorrect = (selectedRoadPoints[0] === m.correct[0] && selectedRoadPoints[1] === m.correct[1]) ||
+                        (selectedRoadPoints[0] === m.correct[1] && selectedRoadPoints[1] === m.correct[0]);
+
+      const drawnGroup = document.getElementById('sec1-drawn-road');
+      drawnGroup.innerHTML = `
+        <line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="${isCorrect ? '#10b981' : '#f43f5e'}" stroke-width="16" stroke-linecap="round" opacity="0.85"/>
+        <line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,6"/>
+      `;
+
+      const fb = document.getElementById('sec1-feedback');
+      fb.classList.remove('hidden');
+
+      if (isCorrect) {
+        playSuccess();
+        addScore(100);
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-emerald-950/60 border-emerald-500 text-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = `
+          <span>🎉 Harika Mühendislik! ${p1.l} ve ${p2.l} noktalarını bağlayarak kurala uygun yolu başarıyla tamamladın!</span>
+          ${currentRoadIdx < 2 ? `<button onclick="loadRoadMission(${currentRoadIdx+1})" class="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs transition">Sıradaki Görev ➔</button>` : '<span class="font-bold text-amber-400">Bölüm 1 Tamamlandı! 🏆</span>'}
+        `;
+      } else {
+        playWrong();
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-rose-950/60 border-rose-500 text-rose-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = `
+          <span>⚠️ Çizdiğin yol istenen geometrik şartı sağlamadı. Tekrar denemek için butona tıkla.</span>
+          <button onclick="loadRoadMission(${currentRoadIdx})" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs transition">Tekrar Dene</button>
+        `;
+      }
+    }
+
+    // ==================== BÖLÜM 2 MOTORU: AÇI DEDEKTİFİ ====================
+    const angleMissions = [
+      { title: "1. Bilim Müzesi Güneş Çatısı", building: "🏢 Ekolojik Bilim Müzesi", val: 42, type: 'dar', desc: "Güneş panellerinin eğim açısı 42° dir." },
+      { title: "2. Tarihi Saat Kulesi (Saat 03:00)", building: "⏰ Meydan Saat Kulesi", val: 90, type: 'dik', desc: "Saat tam 03:00'te akrep ve yelkovan birbirine dik durur." },
+      { title: "3. Asma Köprü Taşıyıcı Halatı", building: "🌉 Boğaziçi Asma Köprüsü", val: 135, type: 'genis', desc: "Çelik taşıyıcı kule halatının açısı 135° dir." },
+      { title: "4. Baraj Su Düzlemi", building: "💧 Hidroelektrik Baraj Gölü", val: 180, type: 'dogru', desc: "Kıyı ve su ufuk çizgisi dümdüz 180° açı oluşturur." }
+    ];
+
+    let currentAngleIdx = 0;
+    let protractorVisible = true;
+
+    function toggleProtractor() {
+      playTone(400, 0.05);
+      protractorVisible = !protractorVisible;
+      const g = document.getElementById('sec2-protractor-group');
+      if (g) g.style.display = protractorVisible ? 'block' : 'none';
+      document.getElementById('btn-protractor-toggle').textContent = protractorVisible ? '📐 İletkiyi Gizle' : '📐 İletkiyi Göster';
+    }
+
+    function loadAngleMission(idx) {
+      currentAngleIdx = idx;
+      const m = angleMissions[idx];
+      document.getElementById('sec2-title').textContent = m.title;
+      document.getElementById('sec2-building').textContent = m.building;
+      document.getElementById('sec2-desc').textContent = m.desc + ' Bu açının türü nedir?';
+      document.getElementById('sec2-feedback').className = 'hidden';
+
+      [0, 1, 2, 3].forEach(i => {
+        const b = document.getElementById('ang-step-' + i);
+        b.className = i === idx 
+          ? 'w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition' 
+          : 'w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition';
+      });
+
+      const svg = document.getElementById('sec2-canvas');
+      const rad = (m.val * Math.PI) / 180;
+      const x2 = 300 + 160 * Math.cos(rad);
+      const y2 = 240 - 160 * Math.sin(rad);
+
+      svg.innerHTML = `
+        <!-- İletki / Açıölçer Plakası -->
+        <g id="sec2-protractor-group" style="display: ${protractorVisible ? 'block' : 'none'}">
+          <path d="M 180 240 A 120 120 0 0 1 420 240 Z" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2"/>
+          <line x1="180" y1="240" x2="420" y2="240" stroke="#38bdf8" stroke-width="2"/>
+          <text x="300" y="260" text-anchor="middle" fill="#7dd3fc" font-size="11">İletki Merkezi (Köşe Noktası)</text>
+          ${[0, 30, 45, 60, 90, 120, 135, 150, 180].map(deg => {
+            const r = (deg * Math.PI) / 180;
+            return `<text x="${300 + 95 * Math.cos(r)}" y="${240 - 95 * Math.sin(r) + 4}" text-anchor="middle" fill="#bae6fd" font-size="8" font-weight="bold">${deg}°</text>`;
+          }).join('')}
+        </g>
+
+        <!-- Açı Kolları (Işınlar) -->
+        <line x1="300" y1="240" x2="480" y2="240" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="300" y1="240" x2="${x2}" y2="${y2}" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="300" cy="240" r="7" fill="#f43f5e"/>
+
+        <!-- Açı Yay ve Değer Gösterimi -->
+        ${m.type === 'dik' ? `
+          <rect x="300" y="212" width="28" height="28" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="2"/>
+          <circle cx="314" cy="226" r="3.5" fill="#10b981"/>
+          <text x="340" y="225" fill="#34d399" font-size="14" font-weight="bold">90° Dik Açı</text>
+        ` : `
+          <path d="M 345 240 A 45 45 0 0 0 ${300 + 45*Math.cos(rad)} ${240 - 45*Math.sin(rad)}" fill="none" stroke="#ec4899" stroke-width="3"/>
+          <text x="355" y="220" fill="#f472b6" font-size="16" font-weight="bold">${m.val}°</text>
+        `}
+      `;
+    }
+
+    function checkAngle(chosenType) {
+      const m = angleMissions[currentAngleIdx];
+      const fb = document.getElementById('sec2-feedback');
+      fb.classList.remove('hidden');
+
+      if (chosenType === m.type) {
+        playSuccess();
+        addScore(100);
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-emerald-950/60 border-emerald-500 text-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = `
+          <span>🎯 Harika Dedektif! ${m.val}° ölçüsü tam bir "${chosenType.toUpperCase()} AÇI"dır.</span>
+          ${currentAngleIdx < 3 ? `<button onclick="loadAngleMission(${currentAngleIdx+1})" class="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs transition">Sıradaki Yapı ➔</button>` : '<span class="font-bold text-amber-400">Bölüm 2 Tamamlandı! 🔍</span>'}
+        `;
+      } else {
+        playWrong();
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-rose-950/60 border-rose-500 text-rose-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = '<span>⚠️ Tekrar Düşün! Açı kollarının açıklığını kontrol ederek uygun tanımı seç.</span>';
+      }
+    }
+
+    // ==================== BÖLÜM 3 MOTORU: GEOMETRİK İNŞA ====================
+    const constMissions = [
+      { title: '1. Park Ana Bulvarı (Doğru Çizimi)', tool: 'line', desc: 'A ve B noktalarını bağlayarak iki yöne sonsuz uzanan ⟷AB doğrusunu çiz.' },
+      { title: '2. Liman Deniz Feneri (Işın Çizimi)', tool: 'ray', desc: 'K noktasından sabit başlayıp L yönünde denize uzanan [KL ışınını çiz.' },
+      { title: '3. Gölet Ahşap İskelesi (Doğru Parçası)', tool: 'segment', desc: 'C noktasından başlayıp D noktasına tam 6 birim uzunluğunda [CD] parçası çiz.' }
+    ];
+
+    let currentConstIdx = 0;
+    let activeConstTool = 'line';
+    let constStart = null;
+    let constEnd = null;
+
+    function setConstTool(tool) {
+      playTone(450, 0.05);
+      activeConstTool = tool;
+      ['line', 'ray', 'segment'].forEach(t => {
+        document.getElementById('tool-' + t).className = t === tool 
+          ? 'px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition' 
+          : 'px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
+      });
+    }
+
+    function loadConstMission(idx) {
+      currentConstIdx = idx;
+      constStart = null;
+      constEnd = null;
+      const m = constMissions[idx];
+      setConstTool(m.tool);
+      document.getElementById('sec3-title').textContent = m.title;
+      document.getElementById('sec3-desc').textContent = m.desc;
+      document.getElementById('sec3-feedback').className = 'hidden';
+
+      [0, 1, 2].forEach(i => {
+        const b = document.getElementById('const-step-' + i);
+        b.className = i === idx 
+          ? 'w-8 h-8 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 transition' 
+          : 'w-8 h-8 rounded-lg font-bold text-xs bg-slate-800 text-slate-300 transition';
+      });
+
+      renderConstCanvas();
+    }
+
+    function renderConstCanvas() {
+      const svg = document.getElementById('sec3-canvas');
+      svg.innerHTML = `
+        <defs>
+          <marker id="carr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+          </marker>
+        </defs>
+        <!-- Grid -->
+        ${Array.from({length: 15}).map((_, i) => `<line x1="${i*40}" y1="0" x2="${i*40}" y2="400" stroke="#1e293b" stroke-width="1"/>`).join('')}
+        ${Array.from({length: 10}).map((_, i) => `<line x1="0" y1="${i*40}" x2="600" y2="${i*40}" stroke="#1e293b" stroke-width="1"/>`).join('')}
+
+        <!-- Hedef Noktalar -->
+        <g>
+          <circle cx="160" cy="200" r="10" fill="#f43f5e" fill-opacity="0.2" stroke="#f43f5e" stroke-width="2"/>
+          <circle cx="160" cy="200" r="5" fill="#f43f5e"/>
+          <text x="160" y="180" text-anchor="middle" fill="#fda4af" font-size="12" font-weight="bold">${currentConstIdx === 1 ? 'K (Fener)' : currentConstIdx === 2 ? 'C (Kıyı)' : 'A'}</text>
+
+          <circle cx="400" cy="200" r="10" fill="#0ea5e9" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+          <circle cx="400" cy="200" r="5" fill="#0ea5e9"/>
+          <text x="400" y="180" text-anchor="middle" fill="#7dd3fc" font-size="12" font-weight="bold">${currentConstIdx === 1 ? 'L (Göl)' : currentConstIdx === 2 ? 'D (İskele)' : 'B'}</text>
+        </g>
+
+        <!-- Çizim Katmanı -->
+        <g id="const-drawing-layer"></g>
+      `;
+    }
+
+    function handleCanvas3Click(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const rawX = ((e.clientX - rect.left) / rect.width) * 600;
+      const rawY = ((e.clientY - rect.top) / rect.height) * 400;
+      const sx = Math.round(rawX / 40) * 40;
+      const sy = Math.round(rawY / 40) * 40;
+
+      if (!constStart) {
+        playTone(550, 0.05);
+        constStart = { x: sx, y: sy };
+      } else {
+        constEnd = { x: sx, y: sy };
+        validateConstruction();
+      }
+    }
+
+    function handleCanvas3Move(e) {
+      if (!constStart || constEnd) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const rawX = ((e.clientX - rect.left) / rect.width) * 600;
+      const rawY = ((e.clientY - rect.top) / rect.height) * 400;
+      const sx = Math.round(rawX / 40) * 40;
+      const sy = Math.round(rawY / 40) * 40;
+
+      const layer = document.getElementById('const-drawing-layer');
+      if (layer) {
+        layer.innerHTML = `<line x1="${constStart.x}" y1="${constStart.y}" x2="${sx}" y2="${sy}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>`;
+      }
+    }
+
+    function validateConstruction() {
+      const layer = document.getElementById('const-drawing-layer');
+      const isTarget1 = Math.hypot(constStart.x - 160, constStart.y - 200) < 25;
+      const isTarget2 = Math.hypot(constEnd.x - 400, constEnd.y - 200) < 25;
+
+      if (activeConstTool === 'line') {
+        layer.innerHTML = `
+          <line x1="${constStart.x - 100}" y1="${constStart.y}" x2="${constEnd.x + 100}" y2="${constEnd.y}" stroke="#10b981" stroke-width="4" marker-start="url(#carr)" marker-end="url(#carr)"/>
+        `;
+      } else if (activeConstTool === 'ray') {
+        layer.innerHTML = `
+          <circle cx="${constStart.x}" cy="${constStart.y}" r="6" fill="#f59e0b"/>
+          <line x1="${constStart.x}" y1="${constStart.y}" x2="${constEnd.x + 100}" y2="${constEnd.y}" stroke="#10b981" stroke-width="4" marker-end="url(#carr)"/>
+        `;
+      } else {
+        layer.innerHTML = `
+          <line x1="${constStart.x}" y1="${constStart.y}" x2="${constEnd.x}" y2="${constEnd.y}" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="${constStart.x}" cy="${constStart.y}" r="5" fill="#10b981"/>
+          <circle cx="${constEnd.x}" cy="${constEnd.y}" r="5" fill="#10b981"/>
+        `;
+      }
+
+      const fb = document.getElementById('sec3-feedback');
+      fb.classList.remove('hidden');
+
+      if (isTarget1 && isTarget2 && activeConstTool === constMissions[currentConstIdx].tool) {
+        playSuccess();
+        addScore(120);
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-emerald-950/60 border-emerald-500 text-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = `
+          <span>🎉 Kusursuz Çizim! Hedeflenen noktaları doğru geometrik araçla birleştirdin!</span>
+          ${currentConstIdx < 2 ? `<button onclick="loadConstMission(${currentConstIdx+1})" class="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs transition">Sıradaki İnşa ➔</button>` : '<span class="font-bold text-amber-400">Tüm İnşalar Tamamlandı! 🏆</span>'}
+        `;
+      } else {
+        playWrong();
+        fb.className = 'mt-4 p-4 rounded-2xl text-sm font-medium border bg-rose-950/60 border-rose-500 text-rose-200 flex flex-col sm:flex-row items-center justify-between gap-3';
+        fb.innerHTML = `
+          <span>⚠️ Kriterler sağlanmadı. Lütfen doğru aracı seçip iki ana noktayı dikkatlice bağla.</span>
+          <button onclick="loadConstMission(${currentConstIdx})" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs transition">Tekrar Çiz</button>
+        `;
+      }
+    }
+
+    function resetConst() {
+      loadConstMission(currentConstIdx);
+    }
+
+    // ==================== BÖLÜM 4: SERBEST MİMAR STÜDYOSU ====================
+    let sbTool = 'line';
+    let sbStart = null;
+    let sbElements = [];
+
+    function setSandboxTool(tool) {
+      playTone(400, 0.05);
+      sbTool = tool;
+      ['line', 'ray', 'segment', 'tree', 'lamp', 'bench'].forEach(t => {
+        const btn = document.getElementById('sb-tool-' + t);
+        if (btn) {
+          btn.className = t === tool 
+            ? 'px-3 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold transition' 
+            : 'px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 transition';
+        }
+      });
+    }
+
+    function handleCanvas4Click(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const rawX = ((e.clientX - rect.left) / rect.width) * 600;
+      const rawY = ((e.clientY - rect.top) / rect.height) * 400;
+      const sx = Math.round(rawX / 40) * 40;
+      const sy = Math.round(rawY / 40) * 40;
+
+      if (sbTool === 'tree' || sbTool === 'lamp' || sbTool === 'bench') {
+        playTone(600, 0.06);
+        sbElements.push({ type: sbTool, x: sx, y: sy });
+        renderSandbox();
+        return;
+      }
+
+      if (!sbStart) {
+        playTone(500, 0.05);
+        sbStart = { x: sx, y: sy };
+      } else {
+        playSuccess();
+        sbElements.push({ type: sbTool, x1: sbStart.x, y1: sbStart.y, x2: sx, y2: sy });
+        sbStart = null;
+        renderSandbox();
+        updateSandboxAnalysis();
+      }
+    }
+
+    function renderSandbox() {
+      const svg = document.getElementById('sec4-canvas');
+      svg.innerHTML = `
+        <defs>
+          <marker id="sbarr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+          </marker>
+        </defs>
+        ${Array.from({length: 15}).map((_, i) => `<line x1="${i*40}" y1="0" x2="${i*40}" y2="400" stroke="#1e293b" stroke-width="1"/>`).join('')}
+        ${Array.from({length: 10}).map((_, i) => `<line x1="0" y1="${i*40}" x2="600" y2="${i*40}" stroke="#1e293b" stroke-width="1"/>`).join('')}
+
+        ${sbElements.map(el => {
+          if (el.type === 'tree') {
+            return `<circle cx="${el.x}" cy="${el.y-10}" r="12" fill="#10b981"/><rect x="${el.x-2}" y="${el.y}" width="4" height="10" fill="#78350f"/>`;
+          }
+          if (el.type === 'lamp') {
+            return `<circle cx="${el.x}" cy="${el.y-10}" r="6" fill="#fef08a"/><line x1="${el.x}" y1="${el.y-10}" x2="${el.x}" y2="${el.y}" stroke="#64748b" stroke-width="2"/>`;
+          }
+          if (el.type === 'bench') {
+            return `<rect x="${el.x-12}" y="${el.y-5}" width="24" height="6" rx="2" fill="#d97706"/><line x1="${el.x-8}" y1="${el.y}" x2="${el.x-8}" y2="${el.y+6}" stroke="#475569" stroke-width="2"/><line x1="${el.x+8}" y1="${el.y}" x2="${el.x+8}" y2="${el.y+6}" stroke="#475569" stroke-width="2"/>`;
+          }
+          if (el.type === 'line') {
+            return `<line x1="${el.x1-50}" y1="${el.y1}" x2="${el.x2+50}" y2="${el.y2}" stroke="#38bdf8" stroke-width="3" marker-start="url(#sbarr)" marker-end="url(#sbarr)"/><circle cx="${el.x1}" cy="${el.y1}" r="3" fill="#38bdf8"/><circle cx="${el.x2}" cy="${el.y2}" r="3" fill="#38bdf8"/>`;
+          }
+          if (el.type === 'ray') {
+            return `<circle cx="${el.x1}" cy="${el.y1}" r="5" fill="#f59e0b"/><line x1="${el.x1}" y1="${el.y1}" x2="${el.x2+40}" y2="${el.y2}" stroke="#f59e0b" stroke-width="3" marker-end="url(#sbarr)"/>`;
+          }
+          return `<line x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}" stroke="#34d399" stroke-width="3.5" stroke-linecap="round"/><circle cx="${el.x1}" cy="${el.y1}" r="4" fill="#10b981"/><circle cx="${el.x2}" cy="${el.y2}" r="4" fill="#10b981"/>`;
+        }).join('')}
+      `;
+    }
+
+    function updateSandboxAnalysis() {
+      const lines = sbElements.filter(e => e.x1 !== undefined);
+      const div = document.getElementById('sb-analysis');
+      if (lines.length < 2) {
+        div.innerHTML = 'Çizimde ' + lines.length + ' adet çizgi var. İkinci bir çizgi çizerek aralarındaki paralellik veya diklik ilişkisini görün!';
+        return;
+      }
+
+      let res = [];
+      for (let i = 0; i < lines.length - 1; i++) {
+        for (let j = i + 1; j < lines.length; j++) {
+          const l1 = lines[i];
+          const l2 = lines[j];
+          const dx1 = l1.x2 - l1.x1, dy1 = l1.y2 - l1.y1;
+          const dx2 = l2.x2 - l2.x1, dy2 = l2.y2 - l2.y1;
+          const cross = Math.abs(dx1 * dy2 - dy1 * dx2);
+          const dot = Math.abs(dx1 * dx2 + dy1 * dy2);
+
+          if (cross < 0.05) {
+            res.push('✨ ' + (i+1) + '. çizgi ile ' + (j+1) + '. çizgi birbirine PARALELDİR (//)! Kesişmezler.');
+          } else if (dot < 0.05) {
+            res.push('📐 ' + (i+1) + '. çizgi ile ' + (j+1) + '. çizgi birbirine DİKTİR (⊥, 90°)!');
+          }
+        }
+      }
+      div.innerHTML = res.length > 0 ? res.join('<br>') : 'Çizilen çizgiler tek bir noktada kesişen eğik doğrular oluşturmaktadır.';
+    }
+
+    function clearSandbox() {
+      playTone(300, 0.1);
+      sbElements = [];
+      sbStart = null;
+      renderSandbox();
+      document.getElementById('sb-analysis').textContent = 'Tahta temizlendi. Yeni çizimler yapabilirsiniz.';
+    }
+
+    // ==================== İLK BAŞLATMA ====================
+    window.addEventListener('DOMContentLoaded', () => {
+      loadRoadMission(0);
+      loadAngleMission(0);
+      loadConstMission(0);
+      renderSandbox();
+    });
+  </script>
+
+
+</body></html>
